@@ -490,6 +490,12 @@ a {
 }
 
 /* dictionary app styles */
+/* themes */
+
+#dark {
+}
+#light {
+}
 
 body {
   padding: 24px 0 63px 0;
@@ -592,6 +598,12 @@ body.mono {
 }
 .font-listing__button[value="Mono"] {
   font-family: var(--tertiary-font);
+}
+.theme-button-box__icon {
+  display: none;
+}
+.theme-button-box__icon.active {
+  display: flex;
 }
 @media all and (min-width: 48em) {
   body {

@@ -63,4 +63,32 @@
   }
 })();
 
+// theme switcher
+
+(function () {
+  const themeSwitcher = document.querySelector("[data-theme]");
+
+  const storedTheme = localStorage.getItem("pageTheme");
+
+  if (storedTheme !== null) {
+    setupThemes(storedTheme);
+  }
+
+  themeSwitcher.addEventListener("click", (e) => {
+    const currentTheme = themeSwitcher.getAttribute("data-theme");
+    setupThemes(currentTheme);
+  });
+
+  function setupThemes(theme) {
+    if (theme === "light") {
+      document.body.setAttribute("id", "dark");
+      themeSwitcher.setAttribute("data-theme", "dark");
+    } else if (theme === "dark") {
+      document.body.setAttribute("id", "light");
+      themeSwitcher.setAttribute("data-theme", "light");
+    }
+
+    localStorage.setItem("pageTheme", theme);
+  }
+})();
 // utility functions
