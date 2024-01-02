@@ -493,13 +493,28 @@ a {
 /* themes */
 
 #dark {
+  --main-bg: white;
+  --standard-text: #2d2d2d;
+
+  --flyout: white;
+  --flyout-bs: 0px 5px 30px 0px rgba(0, 0, 0, 0.1);
+
+  --input: #f4f4f4;
 }
 #light {
+  --main-bg: #050505;
+  --standard-text: white;
+
+  --flyout: #1f1f1f;
+  --flyout-bs: 0px 5px 30px 0px #a445ed;
+
+  --input: #1f1f1f;
 }
 
 body {
   padding: 24px 0 63px 0;
   font-family: var(--primary-font);
+  background: var(--main-bg);
 }
 body.sans {
   font-family: var(--primary-font);
@@ -544,6 +559,10 @@ body.mono {
   gap: 16px;
   flex: 1;
   justify-content: flex-end;
+  color: var(--standard-text);
+}
+.font-button span {
+  color: var(--standard-text);
 }
 .font-button:hover,
 .font-button:focus {
@@ -575,7 +594,8 @@ body.mono {
   position: absolute;
   right: 0;
   bottom: 0;
-  background: red;
+  background: var(--flyout);
+  box-shadow: var(--flyout-bs);
   top: 160%;
   z-index: 3;
   height: fit-content;
@@ -589,6 +609,10 @@ body.mono {
 }
 .font-listing.active {
   display: flex;
+}
+.font-listing__button {
+  font-size: 1.4rem;
+  color: var(--standard-text);
 }
 .font-listing__button[value="Sans Serif"] {
   font-family: var(--primary-font);
@@ -604,6 +628,41 @@ body.mono {
 }
 .theme-button-box__icon.active {
   display: flex;
+}
+
+.site-main {
+  margin-top: 24px;
+}
+.search-form {
+}
+.search-form__input-wrapper {
+  width: 100%;
+  position: relative;
+}
+.search-form__input {
+  width: 100%;
+  border-radius: 16px;
+  height: 48px;
+  background-color: var(--input);
+  border: 1px solid transparent;
+  transform: var(--transition1);
+  padding: 14px 24px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--standard-text);
+}
+.search-form__input:hover {
+  border: 1px solid var(--color-primary);
+}
+.search-form__submit-btn {
+  position: absolute;
+  right: 24.45px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.search-form__submit-btn:hover .search-form__svg,
+.search-form__submit-btn:focus .search-form__svg {
+  transform: scale(1.3);
 }
 @media all and (min-width: 48em) {
   body {
@@ -621,9 +680,21 @@ body.mono {
   }
   .font-button {
     padding-right: 25px;
+    font-size: 1.8rem;
   }
   .font-listing {
     right: 70px;
+  }
+  .font-listing__button {
+    font-size: 1.8rem;
+  }
+  .site-main {
+    margin-top: 51.5px;
+  }
+  .search-form__input {
+    height: 64px;
+    font-size: 2rem;
+    padding: 20px 24px;
   }
 }
 
