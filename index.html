@@ -1,230 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="together we ride" />
-    <link rel="stylesheet" href="./styles.css" />
-    <title>U____U</title>
-  </head>
-  <body id="light" class="sans">
-    <div class="container">
-      <header class="site-header">
-        <a href="#" class="header-logo" aria-label="home">
-          <img
-            class="header-logo__icon"
-            src="./assets/images/logo.svg"
-            alt=""
-          />
-        </a>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="together we ride" />
+		<link rel="stylesheet" href="./styles.css" />
+		<title>U____U</title>
+	</head>
+	<body id="light" class="sans">
+		<div class="container">
+			<header class="site-header">
+				<a href="#" class="header-logo" aria-label="home">
+					<img
+						class="header-logo__icon"
+						src="./assets/images/logo.svg"
+						alt=""
+					/>
+				</a>
 
-        <div class="header-utility">
-          <button
-            value="Sans Serif"
-            class="font-button"
-            type="button"
-            aria-expanded="false"
-            data-expander-toggle="font-flyout"
-          >
-            <span id="font-button-text">Sans Serif</span>
-            <svg
-              class="font-button__drop"
-              xmlns="http://www.w3.org/2000/svg"
-              width="13"
-              height="9"
-              viewBox="0 0 13 9"
-              fill="none"
-            >
-              <path d="M1 1L7 7L13 1" stroke="#A445ED" stroke-width="1.5" />
-            </svg>
-          </button>
+				<div class="header-utility">
+					<button
+						value="Sans Serif"
+						class="font-button"
+						type="button"
+						aria-expanded="false"
+						data-expander-toggle="font-flyout"
+					>
+						<span id="font-button-text">Sans Serif</span>
+						<svg
+							class="font-button__drop"
+							xmlns="http://www.w3.org/2000/svg"
+							width="13"
+							height="9"
+							viewBox="0 0 13 9"
+							fill="none"
+						>
+							<path
+								d="M1 1L7 7L13 1"
+								stroke="#A445ED"
+								stroke-width="1.5"
+							/>
+						</svg>
+					</button>
 
-          <ul class="font-listing resetList" id="font-flyout">
-            <li class="font-listing__item">
-              <button
-                class="font-listing__button"
-                type="button"
-                value="Sans Serif"
-                font-selector
-              >
-                Sans Serif
-              </button>
-            </li>
-            <li class="font-listing__item">
-              <button
-                class="font-listing__button"
-                type="button"
-                value="Serif"
-                font-selector
-              >
-                Serif
-              </button>
-            </li>
-            <li class="font-listing__item">
-              <button
-                class="font-listing__button"
-                type="button"
-                value="Mono"
-                font-selector
-              >
-                Mono
-              </button>
-            </li>
-          </ul>
+					<ul class="font-listing resetList" id="font-flyout">
+						<li class="font-listing__item">
+							<button
+								class="font-listing__button"
+								type="button"
+								value="Sans Serif"
+								font-selector
+							>
+								Sans Serif
+							</button>
+						</li>
+						<li class="font-listing__item">
+							<button
+								class="font-listing__button"
+								type="button"
+								value="Serif"
+								font-selector
+							>
+								Serif
+							</button>
+						</li>
+						<li class="font-listing__item">
+							<button
+								class="font-listing__button"
+								type="button"
+								value="Mono"
+								font-selector
+							>
+								Mono
+							</button>
+						</li>
+					</ul>
 
-          <div class="theme-button-box">
-            <button
-              class="theme-button-box__btn"
-              type="button"
-              data-theme="light"
-              aria-label="toggle between light and dark theme"
-            >
-              <span>here!</span>
-            </button>
-          </div>
-        </div>
-      </header>
+					<div class="theme-button-box">
+						<button
+							class="theme-button-box__btn"
+							type="button"
+							data-theme="light"
+							aria-label="toggle between light and dark theme"
+						>
+							<span>here!</span>
+						</button>
+					</div>
+				</div>
+			</header>
 
-      <main class="site-main">
-        <form class="search-form" action="">
-          <label for="dictionary-search" class="sr-only"> Search word </label>
-          <div class="search-form__input-wrapper">
-            <input
-              type="text"
-              name="dictionary-search"
-              id="dictionary-search"
-              class="search-form__input"
-              placeholder="Enter word here"
-            />
+			<main class="site-main">
+				<form onsubmit="return false;" class="search-form" action="">
+					<label for="dictionary-search" class="sr-only">
+						Search word
+					</label>
+					<div class="search-form__input-wrapper">
+						<input
+							type="text"
+							name="dictionary-search"
+							id="dictionary-search"
+							class="search-form__input"
+							placeholder="Enter word here"
+						/>
 
-            <button class="search-form__submit-btn" type="submit">
-              <svg
-                class="search-form__svg"
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 18 18"
-              >
-                <path
-                  fill="none"
-                  stroke="#A445ED"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  d="m12.663 12.663 3.887 3.887M1 7.664a6.665 6.665 0 1 0 13.33 0 6.665 6.665 0 0 0-13.33 0Z"
-                />
-              </svg>
-            </button>
-          </div>
-        </form>
+						<button
+							class="search-form__submit-btn"
+							type="submit"
+							aria-label="search word definition"
+              id="search-btn"
+						>
+							<svg
+								class="search-form__svg"
+								xmlns="http://www.w3.org/2000/svg"
+								width="18"
+								height="18"
+								viewBox="0 0 18 18"
+							>
+								<path
+									fill="none"
+									stroke="#A445ED"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="1.5"
+									d="m12.663 12.663 3.887 3.887M1 7.664a6.665 6.665 0 1 0 13.33 0 6.665 6.665 0 0 0-13.33 0Z"
+								/>
+							</svg>
+						</button>
+					</div>
+					<p class="search-form__error-msg" id="error-msg">hi</p>
+				</form>
 
-        <div class="result-box">
-          <div class="result-box__main">
-            <div class="result-box__main-top">
-              <h1 class="result-box__key-word">KeyBoard</h1>
-              <p class="result-box__pronunciation">/ˈkiːbɔːd/</p>
-            </div>
-            <button
-              class="result-box__play-btn"
-              type="button"
-              aria-label="click to hear the pronunciation of the word"
-            >
-              <svg
-                class="result-box__play-svg"
-                xmlns="http://www.w3.org/2000/svg"
-                width="75"
-                height="75"
-                viewBox="0 0 75 75"
-              >
-                <g fill="#A445ED" fill-rule="evenodd">
-                  <circle cx="37.5" cy="37.5" r="37.5" opacity=".25" />
-                  <path d="M29 27v21l21-10.5z" />
-                </g>
-              </svg>
-            </button>
-          </div>
+				<div class="result-box">
+					<div class="result-box__main">
+						<div class="result-box__main-top">
+							<h1 class="result-box__key-word">KeyBoard</h1>
+							<p class="result-box__pronunciation">/ˈkiːbɔːd/</p>
+						</div>
+						<button
+							class="result-box__play-btn"
+							type="button"
+							aria-label="click to hear the pronunciation of the word"
+						>
+							<svg
+								class="result-box__play-svg"
+								xmlns="http://www.w3.org/2000/svg"
+								width="75"
+								height="75"
+								viewBox="0 0 75 75"
+							>
+								<g fill="#A445ED" fill-rule="evenodd">
+									<circle
+										cx="37.5"
+										cy="37.5"
+										r="37.5"
+										opacity=".25"
+									/>
+									<path d="M29 27v21l21-10.5z" />
+								</g>
+							</svg>
+						</button>
+					</div>
 
-          <ul class="definitions resetList">
-            <li class="definitions__item">
-              <h2 class="definitions__category">
-                <span>Noun</span>
-              </h2>
+					<ul class="definitions resetList">
+						<li class="definitions__item">
+							<h2 class="definitions__category">
+								<span>Noun</span>
+							</h2>
 
-              <p class="definitions__meaning definitions__subtext ">Meaning</p>
+							<p
+								class="definitions__meaning definitions__subtext"
+							>
+								Meaning
+							</p>
 
-              <ul class="meaning-listing resetList">
-                <li class="meaning-listing__item">
-                  (etc.) A set of keys used to operate a typewriter, computer
-                  etc.
-                </li>
-                <li class="meaning-listing__item ">
-                  A component of many instruments including the piano, organ,
-                  and harpsichord consisting of usually black and white keys
-                  that cause different tones to be produced when struck.
-                </li>
-                <li class="meaning-listing__item">
-                  A device with keys of a musical keyboard, used to control
-                  electronic sound-producing devices which may be built into or
-                  separate from the keyboard device.
-                </li>
-              </ul>
+							<ul class="meaning-listing resetList">
+								<li class="meaning-listing__item">
+									(etc.) A set of keys used to operate a
+									typewriter, computer etc.
+								</li>
+								<li class="meaning-listing__item">
+									A component of many instruments including
+									the piano, organ, and harpsichord consisting
+									of usually black and white keys that cause
+									different tones to be produced when struck.
+								</li>
+								<li class="meaning-listing__item">
+									A device with keys of a musical keyboard,
+									used to control electronic sound-producing
+									devices which may be built into or separate
+									from the keyboard device.
+								</li>
+							</ul>
 
-              <div class="synonyms-box">
-                <p class="synonyms-box__text definitions__subtext ">Synonyms</p>
-                <ul class="synonyms-listing resetList">
-                  <li class="synonyms-listing__item">electronic keyboard</li>
-                </ul>
-              </div>
-            </li>
+							<div class="synonyms-box">
+								<p
+									class="synonyms-box__text definitions__subtext"
+								>
+									Synonyms
+								</p>
+								<ul class="synonyms-listing resetList">
+									<li class="synonyms-listing__item">
+										electronic keyboard
+									</li>
+								</ul>
+							</div>
+						</li>
 
-            <li class="definitions__item">
-              <h2 class="definitions__category">
-                <span>Verb</span>
-              </h2>
+						<li class="definitions__item">
+							<h2 class="definitions__category">
+								<span>Verb</span>
+							</h2>
 
-              <p class="definitions__meaning definitions__subtext ">Meaning</p>
+							<p
+								class="definitions__meaning definitions__subtext"
+							>
+								Meaning
+							</p>
 
-              <ul class="meaning-listing resetList">
-                <li class="meaning-listing__item">
-                 <div class="holder">
-                  To type on a computer keyboard.
+							<ul class="meaning-listing resetList">
+								<li class="meaning-listing__item">
+									<div class="holder">
+										To type on a computer keyboard.
 
-                  <p class="meaning-listing__sentence">
-                    “Keyboarding is the part of this job I hate the most.”
-                  </p>
-                 </div>
-                </li>
-              </ul>
-            </li>
-          </ul>
+										<p class="meaning-listing__sentence">
+											“Keyboarding is the part of this job
+											I hate the most.”
+										</p>
+									</div>
+								</li>
+							</ul>
+						</li>
+					</ul>
 
-          <div class="source-box">
-            <p class="source-box__text">Source</p>
+					<div class="source-box">
+						<p class="source-box__text">Source</p>
 
-            <a href="#" class="source-box__link">
-              <span>https://en.wiktionary.org/wiki/keyboard</span>
-              <svg
-                class="source-box__icon"
-                xmlns="http://www.w3.org/2000/svg"
-                width="14"
-                height="14"
-                viewBox="0 0 14 14"
-              >
-                <path
-                  fill="none"
-                  stroke="#838383"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  d="M6.09 3.545H2.456A1.455 1.455 0 0 0 1 5v6.545A1.455 1.455 0 0 0 2.455 13H9a1.455 1.455 0 0 0 1.455-1.455V7.91m-5.091.727 7.272-7.272m0 0H9m3.636 0V5"
-                />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </main>
-    </div>
+						<a href="#" class="source-box__link">
+							<span>https://en.wiktionary.org/wiki/keyboard</span>
+							<svg
+								class="source-box__icon"
+								xmlns="http://www.w3.org/2000/svg"
+								width="14"
+								height="14"
+								viewBox="0 0 14 14"
+							>
+								<path
+									fill="none"
+									stroke="#838383"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="1.5"
+									d="M6.09 3.545H2.456A1.455 1.455 0 0 0 1 5v6.545A1.455 1.455 0 0 0 2.455 13H9a1.455 1.455 0 0 0 1.455-1.455V7.91m-5.091.727 7.272-7.272m0 0H9m3.636 0V5"
+								/>
+							</svg>
+						</a>
+					</div>
+				</div>
 
-    <script src="./script.js"></script>
-  </body>
+				<div class="error-box"></div>
+			</main>
+		</div>
+
+		<script src="./script.js"></script>
+	</body>
 </html>
