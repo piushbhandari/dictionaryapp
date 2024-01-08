@@ -102,19 +102,40 @@
 	const searchButton = document.querySelector("#search-btn");
 	const errMsg = document.querySelector("#error-msg");
 
+	const baseApiUrl = "https://api.dictionaryapi.dev/api/v2/entries/en/";
 	let currentInputValue = "";
+	let apiUrl = "";
+
+	const storedWord = localStorage.getItem("word");
+
+	if (storedWord !== null) {
+		apiUrl = `${baseApiUrl}${storedWord}`; 
+		startFetch(apiUrl);
+	}
+
 	searchButton.addEventListener("click", (e) => {
 		currentInputValue = searchInput.value;
-		validateForm();
+		const isFormValid = validateForm();
+
+		if (isFormValid) {
+			apiUrl = `${baseApiUrl}${currentInputValue}`;
+			localStorage.setItem("word", currentInputValue);
+			startFetch(apiUrl);
+		}
 	});
 
 	function validateForm() {
+		let isValidated = false;
 		if (!currentInputValue.trim().length) {
 			errMsg.textContent = "Whoops, can’t be empty…";
 			setupStyles(true);
 		} else {
+			``;
 			setupStyles(false);
+			isValidated = true;
 		}
+
+		return isValidated;
 	}
 
 	function setupStyles(flag) {
@@ -124,6 +145,25 @@
 		} else {
 			errMsg.classList.remove("error");
 			searchInput.classList.remove("error");
+		}
+	}
+
+	async function startFetch(apiUrl) {
+		const data = await getData(apiUrl);
+    console.log(apiUrl)
+    console.log(currentInputValue)
+		console.log(data);
+	}
+
+	async function getData(apiUrl) {
+		try {
+			const res = await fetch(apiUrl);
+			const json = await res.json();
+
+			return json;
+		} catch (error) {
+			console.log("Something went wrong!");
+			console.warn(error);
 		}
 	}
 })();
