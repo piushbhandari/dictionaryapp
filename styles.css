@@ -657,9 +657,10 @@ body.mono {
 	font-weight: 700;
 	color: var(--standard-text);
 }
-.search-form__input.error, .search-form__input.error:focus {
-  border-color: var(--color-error);
-  outline-color: var(--color-error);
+.search-form__input.error,
+.search-form__input.error:focus {
+	border-color: var(--color-error);
+	outline-color: var(--color-error);
 }
 .search-form__input:hover {
 	border: 1px solid var(--color-primary);
@@ -819,6 +820,31 @@ body.mono {
 .source-box__link:hover .source-box__icon,
 .source-box__link:focus .source-box__icon {
 	transform: scale(1.3);
+}
+.result-box.hide {
+	display: none;
+}
+.error-box {
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	margin-top: 132px;
+}
+.error-box.show {
+	display: flex;
+}
+.error-box__title {
+	margin: 44px 0 24px 0;
+	color: var(--standard-text);
+	font-size: 2rem;
+	line-height: normal;
+}
+
+.error-box__text {
+	margin: 0;
+	color: var(--category);
+	font-size: 1.8rem;
 }
 @media all and (min-width: 48em) {
 	body {

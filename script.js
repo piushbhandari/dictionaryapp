@@ -101,6 +101,8 @@
 	const searchInput = document.querySelector("#dictionary-search");
 	const searchButton = document.querySelector("#search-btn");
 	const errMsg = document.querySelector("#error-msg");
+	const errorBox = document.querySelector("#error-box");
+	const resultBox = document.querySelector("#result-box");
 
 	const baseApiUrl = "https://api.dictionaryapi.dev/api/v2/entries/en/";
 	let currentInputValue = "";
@@ -109,7 +111,7 @@
 	const storedWord = localStorage.getItem("word");
 
 	if (storedWord !== null) {
-		apiUrl = `${baseApiUrl}${storedWord}`; 
+		apiUrl = `${baseApiUrl}${storedWord}`;
 		startFetch(apiUrl);
 	}
 
@@ -149,10 +151,20 @@
 	}
 
 	async function startFetch(apiUrl) {
+
+   
 		const data = await getData(apiUrl);
-    console.log(apiUrl)
-    console.log(currentInputValue)
-		console.log(data);
+    
+		if (data === undefined) {
+      console.log('empty!')
+      errorBox.classList.add('show')
+      resultBox.classList.add('hide')
+		} else {
+      console.log(apiUrl);
+      console.log(currentInputValue);
+      console.log(data);
+		}
+ 
 	}
 
 	async function getData(apiUrl) {
@@ -160,7 +172,11 @@
 			const res = await fetch(apiUrl);
 			const json = await res.json();
 
-			return json;
+			if (res.status === 404) {
+				throw new Error("YOU SHALL NOT PASS!");
+			} else {
+				return json;
+			}
 		} catch (error) {
 			console.log("Something went wrong!");
 			console.warn(error);
